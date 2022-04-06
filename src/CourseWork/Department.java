@@ -10,6 +10,7 @@ public class Department {
     private int length;//переменная - длина массива-очереди
 
 
+
     public Department getFirst()
     {
         //вернуть ссылку на первый элемент в очереди
