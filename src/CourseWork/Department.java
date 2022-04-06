@@ -2,9 +2,9 @@ package CourseWork;
 
 public class Department {
 
-    private String nameDep;
-    private int count;
-    private Project[] listProject;
+    private String nameDep;//название отдела
+    private int count;//количество проектов в списке
+    private Project[] listProject; //Массив типа Project для записи проектов
     private int first;//переменная, указывающая на 1 элемент в очереди
     private int last;//переменная, указывающая на последний элемент в очереди
     private int length;//переменная - длина массива-очереди
