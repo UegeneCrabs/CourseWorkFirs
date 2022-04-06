@@ -36,9 +36,4 @@ public class Project {
         //изменить значение объема финансирования
     }
 
-    public Integer getSumProject()
-    {
-        //Финансирование проекта
-        return null;
-    }
 }
