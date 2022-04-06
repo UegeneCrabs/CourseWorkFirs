@@ -6,6 +6,7 @@ public class Project {
     private Integer volume;//переменная - объем финансирования
 
 
+
     public Project(String _name, Integer _volume)//Конструктор класса Project
     {
         /*принять имя проекта, объем финансирования
