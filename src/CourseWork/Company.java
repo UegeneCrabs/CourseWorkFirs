@@ -2,8 +2,8 @@ package CourseWork;
 
 public class Company {
 
-    private Department[] queueDep;
-    private String nameComp;
+    private Department[] queueDep;//создание массива типа Department для записи отделов в очередь
+    private String nameComp;//название компании
 
 
 
