@@ -6,6 +6,7 @@ public class Company {
     private String nameComp;
 
 
+
     private Company(String _nameDep)
     {
         /*
