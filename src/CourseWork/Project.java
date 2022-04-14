@@ -5,35 +5,25 @@ public class Project {
     private String name;//переменная-название проекта
     private Integer volume;//переменная - объем финансирования
 
-
-
     public Project(String _name, Integer _volume)//Конструктор класса Project
     {
-        /*принять имя проекта, объем финансирования
-         установить значение переменных-ссылок
-         */
+        this.name = _name;
+        this.volume = _volume;
     }
-
     public String getName()
     {
-        //получить название компании
-        return null;
+        return name;
     }
-
     public Integer getVolume()
     {
-        //получить объем финансирования
-        return null;
+        return volume;
     }
-
     public void setName(String _name)
     {
-        //изменить название компании
+        this.name = _name;
     }
-
     public void setVolume(Integer _volume)
     {
-        //изменить значение объема финансирования
+        this.volume = _volume;
     }
-
 }
