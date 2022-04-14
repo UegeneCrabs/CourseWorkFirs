@@ -1,15 +1,14 @@
 package CourseWork;
 
 public class Company {
-    private final String nameComp;//название компании
+
     private int count;//Переменная счетчик
     private Queue first;//переменная, указывающая на 1 элемент в очереди
     private Queue last;//переменная, указывающая на последний элемент в очереди
     private int allSum = 0;
 
-    public Company(String _nameComp)
+    public Company()
     {
-        this.nameComp = _nameComp;
         first = null;
         last = null;
     }
@@ -22,7 +21,6 @@ public class Company {
             next = null;
         }
         public Queue getNext() {return next;}
-        public void setNext(Queue qq){next = qq;}
     }
     public boolean getDepToEdit(String _name, Integer _volume,String _nameDep)
     {
@@ -54,25 +52,18 @@ public class Company {
 
     public void addDep(String _nameDep)
     {
-
+        Department newDep = new Department(_nameDep);
+        Queue pTemp = new Queue(newDep);
         if(first == null && last == null)
         {
-            Department newDep = new Department(_nameDep);
-            Queue pTemp = new Queue(newDep);
-            //allSum += newDep.getSumList();
             first = pTemp;
-            last = pTemp;
-            count++;
         }
         else
         {
-            Department newDep = new Department(_nameDep);
-            Queue pTemp = new Queue(newDep);
-            //allSum += newDep.getSumList();
             last.next = pTemp;
-            last = pTemp;
-            count++;
         }
+        last = pTemp;
+        count++;
     }
 
     public boolean delDep()
@@ -91,9 +82,9 @@ public class Company {
         Queue pTemp = first;
         while (pTemp != null)
         {
-            info.append("Отдел " + pTemp.info.getNameDep());
-            info.append("\nПроекты:" + pTemp.info.getList());
-            info.append("\nСумма по данному отделу: " + pTemp.info.getSumList() + "\n\n");
+            info.append("Отдел ").append(pTemp.info.getNameDep());
+            info.append("\nПроекты:").append(pTemp.info.getList());
+            info.append("\nСумма по данному отделу: ").append(pTemp.info.getSumList()).append("\n\n");
             pTemp = pTemp.getNext();
         }
         return info.toString();

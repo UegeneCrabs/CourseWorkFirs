@@ -1,14 +1,12 @@
 package CourseWork;
 
-import java.util.Arrays;
 
 public class Department {
 
     private final String nameDep;//название отдела
     private final int size = 10;
     private int count = 0;//количество проектов в списке
-    private Project[] listProject; //Массив типа Project для записи проектов
-    private int sumList;
+    private final Project[] listProject; //Массив типа Project для записи проектов
 
     public Department(String _nameDep)
     {
@@ -20,11 +18,29 @@ public class Department {
 
     public boolean addToList(String _name, int _volume)
     {
-        Project One = new Project(_name,_volume);
-        listProject[count] = One;
-        count++;
-        //setSortList();
-        return (listProject[count] == One);
+        if (size > count) {
+            Project One = new Project(_name, _volume);
+            for (int i = 0; i < size; i++) {
+                if (listProject[i] == null) {
+                    listProject[i] = One;
+                    count++;
+                    return (listProject[count] == One);
+                }
+                else {
+                    if (listProject[i].getVolume() > _volume) {
+                    for (int j = (count-1); j >= i; j--)
+                    {
+                        listProject[j+1] = listProject[j];
+                    }
+                    listProject[i] = One;
+                    count++;
+                    return true;
+                    }
+                    }
+                }
+            return true;
+            }
+        return false;
     }
 
     public Project FindInList(String _name)
@@ -65,7 +81,7 @@ public class Department {
 
     public Integer getSumList()
     {
-        sumList = 0;
+        int sumList = 0;
         for (int i = 0;i < size; i++)
         {
             if (listProject[i] != null){
@@ -87,11 +103,4 @@ public class Department {
         }
         return data.toString();
     }
-
-    /*public void setSortList()
-    {
-        Arrays.stream(listProject).sorted();
-    }*/
-
-
 }
